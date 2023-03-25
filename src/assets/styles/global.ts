@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     font-family: 'Commissioner', sans-serif;
     font-size: 16px;
+    background-color: #fafafa;
   }
 
   button, a {
