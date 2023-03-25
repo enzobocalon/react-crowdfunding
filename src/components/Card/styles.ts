@@ -121,5 +121,25 @@ export const Input = styled.input`
   border: none;
   font-family: inherit;
   color: ${({theme}) => theme.neutral.black};
-  font-weight: bold
+  font-weight: bold;
+
+  ::-webkit-outer-spin-button,
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type=number] {
+    -moz-appearance: textfield;
+  }
+`;
+
+export const Error = styled.div`
+  padding: 0rem 2rem;
+  color: #FF0000;
+  text-align: right;
+  
+  p {
+    margin-block: .5rem;
+  }
 `;
