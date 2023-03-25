@@ -15,4 +15,9 @@ export const Button = styled.button`
   :hover {
     background-color: ${({theme}) => theme.primary.moderateCyan};
   }
+
+  :disabled {
+    background-color: ${({theme}) => theme.neutral.darkGray};
+    cursor: not-allowed;
+  }
 `;
