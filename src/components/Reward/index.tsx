@@ -1,4 +1,7 @@
+import { useCallback, useState } from 'react';
 import { Button } from '../Button';
+import CardGroup from '../CardGroup';
+import Modal from '../Modal';
 import * as S from './styles';
 
 interface Props {
@@ -6,30 +9,47 @@ interface Props {
   value: string;
   quantity: number;
   description: string;
+	minAmount: number;
 }
 
-export default function Reward({title, value, description, quantity}: Props) {
+export default function Reward({title, value, description, quantity, minAmount}: Props) {
+	const [openModal, setOpenModal] = useState(false);
+
+	const handleClose = useCallback(() => {
+		setOpenModal(false);
+	}, []);
 	return (
-		<S.Container disabled={quantity === 0}>
-			<S.HeaderContainer>
-				<h1>{title}</h1>
-				<span className='value-field'>{value}</span>
-			</S.HeaderContainer>
+		<>
+			<S.Container disabled={quantity === 0}>
+				<S.HeaderContainer>
+					<h1>{title}</h1>
+					<span className='value-field'>{value}</span>
+				</S.HeaderContainer>
 
-			<p className='description'>
-				{description}
-			</p>
+				<p className='description'>
+					{description}
+				</p>
 
-			<S.FooterContainer>
-				<div>
-					<h2>{quantity}</h2>
-					<span>left</span>
-				</div>
+				<S.FooterContainer>
+					<div>
+						<h2>{quantity}</h2>
+						<span>left</span>
+					</div>
 
-				<Button disabled={quantity === 0}>
-					{quantity === 0 ? 'Out of Stock' : 'Select Reward'}
-				</Button>
-			</S.FooterContainer>
-		</S.Container>
+					<Button disabled={quantity === 0} onClick={() => setOpenModal(prev => !prev)}>
+						{quantity === 0 ? 'Out of Stock' : 'Select Reward'}
+					</Button>
+				</S.FooterContainer>
+			</S.Container>
+		
+			{
+				openModal && (
+					<Modal handleClose={handleClose}>
+						<CardGroup 
+							handleClose={handleClose} />
+					</Modal>
+				)
+			}
+		</>
 	);
 }

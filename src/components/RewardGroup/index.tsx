@@ -1,4 +1,5 @@
 import { Container } from '../Container';
+import Modal from '../Modal';
 import Reward from '../Reward';
 import * as S from './styles';
 
@@ -21,18 +22,21 @@ export default function RewardGroup() {
 					title='Bamboo Stand'
 					value='Pledge $25 or more'
 					quantity={101}
+					minAmount={25}
 					description={`You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and 
 					you’ll be added to a special Backer member list.`}/>
 				<Reward 
 					title='Black Edition Stand'
 					value='Pledge $75 or more'
 					quantity={64}
+					minAmount={75}
 					description={`You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer 
 					member list. Shipping is included.`}/>
 				<Reward
 					title='Mahogany Special Edition'
 					value='Pledge $200 or more'
 					quantity={0} 
+					minAmount={200}
 					description={`You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added 
 					to our Backer member list. Shipping is included.`}/>
 			</S.Wrapper>
