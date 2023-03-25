@@ -6,12 +6,7 @@ interface Props {
 
 export const Container = styled.div<Props>`
   border: 1px solid rgb(215, 215, 215);
-  padding: 1.5rem 2rem;
   border-radius: .5rem;
-
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
 
   input[type='radio'] {
     width: 40px;
@@ -50,6 +45,13 @@ export const Container = styled.div<Props>`
     `};
 `;
 
+export const Wrapper = styled.div`
+  display: flex;
+  align-items: flex-start;
+  padding: 1.5rem 2rem;
+  gap: 1rem;
+`;
+
 export const Content = styled.div`
   > .description {
     margin-top: 1rem;
@@ -78,4 +80,46 @@ export const Header = styled.div<Props>`
     }
   }
 
+`;
+
+export const ActionContainer = styled.div`
+  border-top: 1px solid rgb(215, 215, 215);
+`;
+
+export const Actions = styled.div`
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+`;
+
+export const InputContainer = styled.div`
+  padding: .75rem .5rem;
+  border-radius: 2rem;
+  border: 1px solid rgb(215, 215, 215);
+
+  display: flex;
+  align-items: center;
+  
+  label {
+    margin-left: .5rem;
+    color: rgb(215, 215, 215);
+    font-weight: 500;
+  }
+`;
+
+export const Input = styled.input`
+  max-width: 50px;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  font-family: inherit;
+  color: ${({theme}) => theme.neutral.black};
+  font-weight: bold
 `;

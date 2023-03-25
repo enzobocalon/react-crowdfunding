@@ -9,10 +9,9 @@ interface Props {
   value: string;
   quantity: number;
   description: string;
-	minAmount: number;
 }
 
-export default function Reward({title, value, description, quantity, minAmount}: Props) {
+export default function Reward({title, value, description, quantity}: Props) {
 	const [openModal, setOpenModal] = useState(false);
 
 	const handleClose = useCallback(() => {
