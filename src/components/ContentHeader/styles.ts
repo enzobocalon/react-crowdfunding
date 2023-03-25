@@ -5,6 +5,11 @@ export const ActionContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
 
 export const BookMarkContainer = styled.div`

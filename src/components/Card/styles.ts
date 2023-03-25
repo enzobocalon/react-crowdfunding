@@ -18,6 +18,11 @@ export const Container = styled.div<Props>`
     cursor: pointer;
     transition: all .3s ease;
 
+    @media (max-width: 768px) {
+      min-height: 32px;
+      min-width: 32px;
+    }
+
     :hover {
       outline-color: ${({theme}) => theme.primary.moderateCyan};
     }
@@ -50,6 +55,10 @@ export const Wrapper = styled.div`
   align-items: flex-start;
   padding: 1.5rem 2rem;
   gap: 1rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 1.5rem 1rem;
+  }
 `;
 
 export const Content = styled.div`
@@ -80,6 +89,25 @@ export const Header = styled.div<Props>`
     }
   }
 
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        margin-inline: 0;
+      }
+
+      label {
+        text-align: left;
+      }
+    }
+  }
 `;
 
 export const ActionContainer = styled.div`
@@ -97,6 +125,11 @@ export const Actions = styled.div`
     align-items: center;
     gap: 1rem;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
 
 export const InputContainer = styled.div`
@@ -106,12 +139,17 @@ export const InputContainer = styled.div`
 
   display: flex;
   align-items: center;
+
+  @media (max-width: 768px) {
+    flex: 1;
+  }
   
   label {
     margin-left: .5rem;
     color: rgb(215, 215, 215);
     font-weight: 500;
   }
+
 `;
 
 export const Input = styled.input`

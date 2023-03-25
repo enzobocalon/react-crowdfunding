@@ -4,6 +4,10 @@ export const ItemGroup = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const Item = styled.div`
@@ -24,6 +28,14 @@ export const Item = styled.div`
 
   :not(:last-of-type) {
     border-right: 1px solid #d1d1d1;
+  }
+
+  @media (max-width: 768px) {
+    :not(:last-of-type) {
+      border-right: none;
+      border-bottom: 1px solid #d1d1d1;
+      padding-bottom: 1rem;
+    }
   }
 `;
 
