@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import bgDekstop from '../../assets/images/image-hero-desktop.jpg';
 
+interface Props {
+  open?: boolean;
+}
+
 export const Container = styled.header`
   min-width: 100%;
   background-image: url(${bgDekstop});
@@ -38,16 +42,50 @@ export const NavBar = styled.nav`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  position: relative;
+
+  #menuMobile {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    #menuMobile {
+      display:block;
+    }
+  }
 `;
 
-export const Menu = styled.ul`
+export const Menu = styled.ul<Props>`
   display: flex;
   align-items: center;
   gap: 2.5rem;
+
+  @media (max-width: 768px) {
+    opacity: ${({open}) => open ? '1' : '0'};
+    pointer-events: ${({open}) => open ? 'all' : 'none'};
+    transition: all .3s ease;
+    flex-direction: column;
+    background-color: white;
+    color: black;
+    position: absolute;
+    right: 0;
+    border-radius: 1rem;
+    top: 2rem;
+    gap: 0;
+  }
 `;
 
 export const MenuItem = styled.li`
   list-style: none;
   cursor: pointer;
   font-weight: 500;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem 2rem;
+    width: 100%;
+    
+    :not(:last-of-type) {
+      border-bottom: 1px solid rgb(215, 215, 215);
+    }
+  }
 `;

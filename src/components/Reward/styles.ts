@@ -43,4 +43,9 @@ export const FooterContainer = styled.div`
       color: ${({theme}) => theme.neutral.darkGray};
     }
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
