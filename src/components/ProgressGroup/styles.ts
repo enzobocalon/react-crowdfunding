@@ -10,12 +10,16 @@ export const Item = styled.div`
   text-align: left;
   flex: 1;
 
+  :first-of-type {
+    flex: 1.5;
+  }
+
   h1 {
     margin-block: .5rem;
   }
 
   & + & {
-    padding-left: 4rem;
+    padding-inline: 2rem;
   }
 
   :not(:last-of-type) {
